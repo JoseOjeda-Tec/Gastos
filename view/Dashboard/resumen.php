@@ -90,7 +90,9 @@
             <div class="div-comments-alerts">
                 <div class="card-all card-comments">
                     <div class="title-comments"><h6>Comentarios</h6> <i class="fa-solid fa-comment"></i></div>
-                    <div class="comments"></div>
+                    <div class="comments">
+                        <button type="button">Prueba</button>
+                    </div>
                 </div>
                 <div class="card-all card-alerts">
                     <div class="title-alerts"><h6>Alertas</h6> <i class="fa-solid fa-triangle-exclamation"></i></div>

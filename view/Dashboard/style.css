@@ -153,7 +153,7 @@ body{
 }
 
 .card-all{
-    display: flex;
+    /* display: flex; */
     width: 29rem;
     height: 16rem;
     text-align: center;
@@ -162,8 +162,19 @@ body{
 .card-comments{ background-color: #33A8FF; }
 .card-alerts{ background-color: #0067B4; }
 
-.title-comments{
+.title-comments, .title-alerts{
+    display: flex;
+    text-align: center;
+    height: 1rem;
     width: 27rem;
+    margin: 1rem;
+    align-content: center;
+    justify-content: center;
+}
+
+.title-comments>h6, .title-alerts>h6{
+    margin: 0;
+    margin-right: 10px;
 }
 
 .comments{
