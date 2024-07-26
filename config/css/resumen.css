@@ -13,12 +13,28 @@ body{
     height: 55rem;
 }
 
+/* Menus inicaiales */
+.menu-nav{
+    background-color: #0067B4;
+    width: 58rem;
+    height: 2rem;
+    margin: 16px;
+}
+
+.menu-btn{
+    width: 77.3px;
+    height: 2rem;
+    margin: 0;
+    border: none;
+    margin-right: -5.6px;
+}
+
 /* Botones de meses */
 .month-buttons{
     background-color: aquamarine;
     width: 58rem;
     height: 2rem;
-    margin: 16px;
+    margin: 16px 16px 0 16px;
 }
 
 .month-btn{
@@ -39,6 +55,41 @@ body{
     background-color: #0067B4;
     font-weight: 800;
     color: #fff;
+}
+
+/* Seleccion de años y bancos */
+.seleccions-year-bank{
+    background-color: aquamarine;
+    width: 58rem;
+    height: 2rem;
+    margin: -1px 16px 16px 16px;
+}
+
+.reload-btn{
+    width: 8rem;
+    height: 2rem;
+    margin: 0;
+    border: none;
+    margin-right: -5.6px;
+}
+
+.btn-dark-reload{
+    background-color: #18b400;
+    font-weight: 800;
+    color: #fff;
+}
+
+.select-anios, .select-bank{
+    width: 25rem;
+    height: 2rem;
+    margin: 0;
+    border: none;
+    margin-right: -5.6px;
+    margin-top: 0;
+}
+
+.select-bank{
+    background-color: #ddd8d8;
 }
 
 /* Titulo de resumenes */

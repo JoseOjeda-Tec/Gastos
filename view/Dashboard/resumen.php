@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resumen</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../config/css/resumen.css">
     <link href="../../config/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="../../config/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="../../config/fontawesome/css/solid.css" rel="stylesheet" />
@@ -16,6 +16,14 @@
     <div class="container-all">
 
         <div class="container-descktop">
+
+            <div class="menu-nav">
+                <button type="button" class="btn-dark menu-btn">Home</button>
+            </div>
+
+            <div class="title-summary-active">
+                <h1 class="title-summary">Enero 2024 - <strong>Banco Itau</strong></h1>
+            </div>
 
             <div class="month-buttons">
                 <button type="button" class="month-btn btn-clear">ENE</button>
@@ -31,9 +39,17 @@
                 <button type="button" class="month-btn btn-clear">NOV</button>
                 <button type="button" class="month-btn btn-dark">DIC</button>
             </div>
-
-            <div class="title-summary-active">
-                <h1 class="title-summary">Enero 2024 - <strong>Banco Itau</strong></h1>
+            
+            <div class="seleccions-year-bank">
+                <select id="anios" class="select-anios">
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+                <select name="" id="bank" class="select-bank">
+                    <option value="Itau">Itau</option>
+                    <option value="Estado">Estado</option>
+                </select>
+                <button type="button" class="reload-btn btn-dark-reload">ACTUALIZAR <i class="fa-solid fa-arrows-rotate"></i></button>
             </div>
 
             <div class="summarys">
@@ -91,7 +107,7 @@
                 <div class="card-all card-comments">
                     <div class="title-comments"><h6>Comentarios</h6> <i class="fa-solid fa-comment"></i></div>
                     <div class="comments">
-                        <button type="button">Prueba</button>
+                        
                     </div>
                 </div>
                 <div class="card-all card-alerts">
