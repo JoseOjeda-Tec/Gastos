@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resumen</title>
 
-    <link rel="stylesheet" href="../../config/css/resumen.css">
+    <link href="../../config/css/resumen.css" rel="stylesheet" >
     <link href="../../config/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="../../config/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="../../config/fontawesome/css/solid.css" rel="stylesheet" />
+
+    <script src="../../config/js/resumen.js"></script>
 
 </head>
 <body>
@@ -26,18 +28,18 @@
             </div>
 
             <div class="month-buttons">
-                <button type="button" class="month-btn btn-clear">ENE</button>
-                <button type="button" class="month-btn btn-dark">FEB</button>
-                <button type="button" class="month-btn btn-clear">MAR</button>
-                <button type="button" class="month-btn btn-dark">ABR</button>
-                <button type="button" class="month-btn btn-clear">MAY</button>
-                <button type="button" class="month-btn btn-dark">JUN</button>
-                <button type="button" class="month-btn btn-clear">JUL</button>
-                <button type="button" class="month-btn btn-dark">AGO</button>
-                <button type="button" class="month-btn btn-clear">SEP</button>
-                <button type="button" class="month-btn btn-dark">OCT</button>
-                <button type="button" class="month-btn btn-clear">NOV</button>
-                <button type="button" class="month-btn btn-dark">DIC</button>
+                <button type="button" id="btn-ene" class="month-btn btn-clear">ENE</button>
+                <button type="button" id="btn-feb" class="month-btn btn-dark">FEB</button>
+                <button type="button" id="btn-mar" class="month-btn btn-clear">MAR</button>
+                <button type="button" id="btn-abr" class="month-btn btn-dark">ABR</button>
+                <button type="button" id="btn-may" class="month-btn btn-clear">MAY</button>
+                <button type="button" id="btn-jun" class="month-btn btn-dark">JUN</button>
+                <button type="button" id="btn-jul" class="month-btn btn-clear">JUL</button>
+                <button type="button" id="btn-ago" class="month-btn btn-dark">AGO</button>
+                <button type="button" id="btn-sep" class="month-btn btn-clear">SEP</button>
+                <button type="button" id="btn-oct" class="month-btn btn-dark">OCT</button>
+                <button type="button" id="btn-nov" class="month-btn btn-clear">NOV</button>
+                <button type="button" id="btn-dic" class="month-btn btn-dark">DIC</button>
             </div>
             
             <div class="seleccions-year-bank">
@@ -49,7 +51,7 @@
                     <option value="Itau">Itau</option>
                     <option value="Estado">Estado</option>
                 </select>
-                <button type="button" class="reload-btn btn-dark-reload">ACTUALIZAR <i class="fa-solid fa-arrows-rotate"></i></button>
+                <button type="button" id="btn-reload-summary" class="reload-btn btn-dark-reload">ACTUALIZAR <i class="fa-solid fa-arrows-rotate"></i></button>
             </div>
 
             <div class="summarys">

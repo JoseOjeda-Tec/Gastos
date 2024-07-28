@@ -27,6 +27,7 @@ body{
     margin: 0;
     border: none;
     margin-right: -5.6px;
+    cursor: pointer;
 }
 
 /* Botones de meses */
@@ -43,6 +44,7 @@ body{
     margin: 0;
     border: none;
     margin-right: -5.6px;
+    cursor: pointer;
 }
 
 .btn-clear{
@@ -71,6 +73,7 @@ body{
     margin: 0;
     border: none;
     margin-right: -5.6px;
+    cursor: pointer;
 }
 
 .btn-dark-reload{
