@@ -10,6 +10,7 @@
     <link href="../../config/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="../../config/fontawesome/css/solid.css" rel="stylesheet" />
 
+    <script src="../../config/js/ajax.js"></script>
     <script src="../../config/js/resumen.js"></script>
 
 </head>
@@ -20,7 +21,9 @@
         <div class="container-descktop">
 
             <div class="menu-nav">
-                <button type="button" class="btn-dark menu-btn">Home</button>
+                <button type="button" class="btn-dark menu-btn ">Home</button>
+                <button type="button" class="btn-dark menu-btn">Compras</button>
+                <button type="button" class="btn-dark menu-btn">Bancos</button>
             </div>
 
             <div class="title-summary-active">
@@ -28,6 +31,7 @@
             </div>
 
             <div class="month-buttons">
+                <input type="hidden" id="month-btn-active">
                 <button type="button" id="btn-ene" class="month-btn btn-clear">ENE</button>
                 <button type="button" id="btn-feb" class="month-btn btn-dark">FEB</button>
                 <button type="button" id="btn-mar" class="month-btn btn-clear">MAR</button>
@@ -43,10 +47,7 @@
             </div>
             
             <div class="seleccions-year-bank">
-                <select id="anios" class="select-anios">
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                </select>
+                <select id="anios" class="select-anios"> </select>
                 <select name="" id="bank" class="select-bank">
                     <option value="Itau">Itau</option>
                     <option value="Estado">Estado</option>
@@ -108,13 +109,11 @@
             <div class="div-comments-alerts">
                 <div class="card-all card-comments">
                     <div class="title-comments"><h6>Comentarios</h6> <i class="fa-solid fa-comment"></i></div>
-                    <div class="comments">
-                        
-                    </div>
+                    <div class="comments"> </div>
                 </div>
                 <div class="card-all card-alerts">
                     <div class="title-alerts"><h6>Alertas</h6> <i class="fa-solid fa-triangle-exclamation"></i></div>
-                    <div class="alerts"></div>
+                    <div class="alerts"> </div>
                 </div>
             </div>
 

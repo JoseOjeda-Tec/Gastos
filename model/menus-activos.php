@@ -12,7 +12,13 @@
         }
 
         public function getMenusActivos(){
-            return 'prueba';
+
+            $sql = "SELECT menu, activo FROM menus_activos";
+            foreach ($this->db->con($sql) as $res) {
+                $this->menus_activos[] = [$res['menu'] => $res['activo']];
+            }
+            return $this->menus_activos;
+            
         }
         
     }

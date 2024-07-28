@@ -1,5 +1,6 @@
 window.onload = function() {
     asignarFunctionBtn();
+    actualizarResumenes();
 }
 
 function asignarFunctionBtn(){
@@ -33,6 +34,7 @@ function asignarFunctionBtn(){
 }
 
 function cambiaColor(act){
+
     const btnEne = document.querySelector("#btn-ene");
     const btnFeb = document.querySelector("#btn-feb");
     const btnMar = document.querySelector("#btn-mar");
@@ -45,6 +47,7 @@ function cambiaColor(act){
     const btnOct = document.querySelector("#btn-oct");
     const btnNov = document.querySelector("#btn-nov");
     const btnDic = document.querySelector("#btn-dic");
+    const btnAct = document.querySelector("#month-btn-active");
 
     btnEne.style.backgroundColor = act == "ene" ? "#e38f09" : "#33A8FF";
     btnFeb.style.backgroundColor = act == "feb" ? "#e38f09" : "#0067B4";
@@ -58,34 +61,65 @@ function cambiaColor(act){
     btnOct.style.backgroundColor = act == "oct" ? "#e38f09" : "#0067B4";
     btnNov.style.backgroundColor = act == "nov" ? "#e38f09" : "#33A8FF";
     btnDic.style.backgroundColor = act == "dic" ? "#e38f09" : "#0067B4";
+    btnAct.value = act;
+
+}
+
+function muestraBancos(banco = 0){
+
+    ajax(
+        'POST', 
+        '../../controller/banks-controller.php', 
+        (xhr) => {
+            var response = JSON.parse(xhr.responseText);
+            var html = "";
+
+            response.forEach(element => {
+                html += "<option value=\"" + element["id_bank"] + "\"" + (element["id_bank"] == banco ? " selected" : "") + ">" + element["descripcion"] + "/" + element["tipo"] + "</option>";
+            });
+
+            const slcsnio = document.querySelector("#bank");
+            slcsnio.innerHTML = html;
+        }, 
+        { accion: 'getBanks' }
+    );
+
+}
+
+function muestraAnios(anio = 0){
+
+    ajax(
+        'POST', 
+        '../../controller/years-controller.php', 
+        (xhr) => {
+            var response = JSON.parse(xhr.responseText);
+            var html = "";
+
+            response.forEach(element => {
+                html += "<option value=\"" + element["id_year"] + "\"" + (element["id_year"] == anio ? " selected" : "") + ">" + element["anio"] + "</option>";
+            });
+
+            const slcsnio = document.querySelector("#anios");
+            slcsnio.innerHTML = html;
+        }, 
+        { accion: 'getYears' }
+    );
+
 }
 
 function actualizarResumenes(){
 
-    var xhr = new XMLHttpRequest();
-
-    xhr.open('POST', '../../controller/menus-activos-controller.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-
-    xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            
+    ajax(
+        'POST', 
+        '../../controller/menus-activos-controller.php', 
+        (xhr) => {
             var response = JSON.parse(xhr.responseText);
-            console.log(response);
+            cambiaColor(response['month']);
+            muestraAnios(response['year']);
+            muestraBancos(response['bank']);
             // document.getElementById('response').innerText = JSON.stringify(response, null, 2);
-        } else {
-            console.error('Error en la petición:', xhr.statusText);
-        }
-    };
-
-    xhr.onerror = function() {
-        console.error('Error de red');
-    };
-
-    var data = JSON.stringify({
-        accion: 'getMenusActivos'
-    });
-
-    xhr.send(data);
-
+        }, 
+        { accion: 'getMenusActivos' }
+    );
+    
 }

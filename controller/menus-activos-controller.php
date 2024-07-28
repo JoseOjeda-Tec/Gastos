@@ -11,14 +11,16 @@
     switch ($data['accion']) {
         case "getMenusActivos":
 
+            $array_data = $menus_activos->getMenusActivos();
+
             $response = [
-                'status' => 'success',
-                'message' => 'Datos recibidos correctamente.',
-                'receivedData' => $data
+                'menu' => $array_data[0]['menu'],
+                'month' => $array_data[1]['month'],
+                'year' => $array_data[2]['slc-year'],
+                'bank' => $array_data[3]['slc-bank']
             ];
 
-            // 
-            echo json_encode($menus_activos->getMenusActivos());
+            echo json_encode($response);
 
         break;
         
