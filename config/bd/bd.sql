@@ -34,3 +34,18 @@ INSERT INTO years (anio) VALUES
 ('2025'),
 ('2026'),
 ('2027');
+
+CREATE TABLE static_pays(
+    id_static_pays bigint NOT NULL AUTO_INCREMENT,
+    descripcion varchar(50) NOT NULL,
+    class_color varchar(30) NOT NULL,
+    Monto bigint NOT NULL,
+    dia_vencimiento int NOT NULL,
+    id_bank bigint NOT NULL,
+    mes varchar(10) NOT NULL,
+    anio varchar(10) NOT NULL,
+    estado int NOT NULL,
+    fecha_pago varchar(20) NULL,
+    fecha_registro varchar(20) NULL,
+    PRIMARY KEY (id_static_pays)
+);

@@ -1,0 +1,45 @@
+<div class="form-pagos-fijos">
+    <input type="hidden" id="id-edit">
+    <input type="text" id="descripcion" placeholder="Descripción" class="input-pagos-fijos">
+    <input type="text" id="monto" placeholder="Monto Pago" class="input-pagos-fijos">
+    <input type="text" id="dia-ven" placeholder="Día ven." class="input-pagos-fijos">
+    <select id="form-bank" class="select-form-pagos-fijos select-form-bank"> </select>
+    <select id="form-meses" class="select-form-pagos-fijos select-form-month"> </select>
+    <select id="form-anios" class="select-form-pagos-fijos select-form-anios"> </select>
+    <div class="div-botones">
+        <button type="button" id="btn-save-pay" class="pay-btn btn-dark-pay">Guardar <i class="fa-solid fa-floppy-disk"></i></button>
+        <button type="button" id="btn-edit-pay" class="pay-btn btn-dark-pay">Editar <i class="fa-solid fa-floppy-disk"></i></button>
+    </div>
+</div>
+<div class="form-pagos-fijos-bottom">
+    <div class="div-left-bottom">
+        <input type="hidden" id="color-selec">
+        <button type="button" class="btn-color btn-color-yellow" onclick="seleccionColor('yellow')"></button>
+        <button type="button" class="btn-color btn-color-blue" onclick="seleccionColor('blue')"></button>
+        <button type="button" class="btn-color btn-color-gray" onclick="seleccionColor('gray')"></button>
+        <button type="button" class="btn-color btn-color-green" onclick="seleccionColor('green')"></button>
+        <button type="button" class="btn-color btn-color-orange" onclick="seleccionColor('orange')"></button>
+        <button type="button" class="btn-color btn-color-black" onclick="seleccionColor('black')"></button>
+        <button type="button" class="btn-color btn-color-dark-blue" onclick="seleccionColor('dark-blue')"></button>
+        <button type="button" class="btn-color btn-color-purple" onclick="seleccionColor('purple')"></button>
+        <h3 class="desc-color"><i class="fa-solid fa-arrow-left"></i> Elegir color casilla</h3>
+    </div>
+    <div class="div-right-bottom">
+        <button type="button" id="btn-clean-pay" class="pay-btn btn-dark-pay">Limpiar <i class="fa-solid fa-broom"></i></button>
+    </div>
+</div>
+
+<div class="div-list-pagos-fijos">
+    <div class="card-all card-pagos-fijos">
+        
+        <div class="title-pagos-fijos"><h6>Pagos Fijos</h6> <i class="fa-regular fa-money-bill-1"></i></div>
+        <div class="form-filtro-pagos-fijos">
+            <select id="bank" class="select-pagos-fijos select-bank"> </select>
+            <select id="meses" class="select-pagos-fijos select-month"> </select>
+            <select id="anios" class="select-pagos-fijos select-anios"> </select>
+            <button type="button" id="btn-filter-pay" class="pay-btn btn-dark-pay">Filtrar <i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="pagos-fijos"> </div>
+
+    </div>
+</div>

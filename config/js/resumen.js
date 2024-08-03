@@ -1,6 +1,7 @@
 window.onload = function() {
+    asignarFuncionMenuPrincipal();
     asignarFunctionBtn();
-    actualizarResumenes();
+    cargaResumenes();
 }
 
 function asignarFunctionBtn(){
@@ -72,6 +73,7 @@ function muestraBancos(banco = 0){
         '../../controller/banks-controller.php', 
         (xhr) => {
             var response = JSON.parse(xhr.responseText);
+            var bankactive = "";
             var html = "";
 
             response.forEach(element => {
@@ -86,6 +88,28 @@ function muestraBancos(banco = 0){
 
 }
 
+function getBankPlusAccount(banco = 0){
+
+    var datareturn = ajaxReturn(
+        'POST', 
+        '../../controller/banks-controller.php', 
+        (xhr) => {
+            var response = JSON.parse(xhr.responseText);
+            var bankactive = "";
+
+            response.forEach(element => {
+                bankactive = element["id_bank"] == banco ? element["descripcion"] + "/" + element["tipo"] : bankactive;
+            });
+
+            return bankactive;
+        }, 
+        { accion: 'getBanks' }
+    );
+
+    return datareturn;
+
+}
+
 function muestraAnios(anio = 0){
 
     ajax(
@@ -93,6 +117,7 @@ function muestraAnios(anio = 0){
         '../../controller/years-controller.php', 
         (xhr) => {
             var response = JSON.parse(xhr.responseText);
+            var yearactive = "";
             var html = "";
 
             response.forEach(element => {
@@ -107,7 +132,29 @@ function muestraAnios(anio = 0){
 
 }
 
-function actualizarResumenes(){
+function getYearActive(anio = 0){
+
+    var datareturn = ajaxReturn(
+        'POST', 
+        '../../controller/years-controller.php', 
+        (xhr) => {
+            var response = JSON.parse(xhr.responseText);
+            var yearactive = "";
+
+            response.forEach(element => {
+                yearactive = element["id_year"] == anio ? element["anio"] : yearactive;
+            });
+            
+            return yearactive;
+        }, 
+        { accion: 'getYears' }
+    );
+
+    return datareturn;
+
+}
+
+function cargaResumenes(){
 
     ajax(
         'POST', 
@@ -117,9 +164,33 @@ function actualizarResumenes(){
             cambiaColor(response['month']);
             muestraAnios(response['year']);
             muestraBancos(response['bank']);
+
+            const ttlsmry = document.querySelector("#title-summary-id");
+            ttlsmry.textContent =  completeMonth(response['month']) + " " + getYearActive(response['year']) + " - Banco " + getBankPlusAccount(response['bank']);
             // document.getElementById('response').innerText = JSON.stringify(response, null, 2);
         }, 
         { accion: 'getMenusActivos' }
     );
     
+}
+
+function actualizarResumenes(){
+
+    const btnAct = document.querySelector("#month-btn-active");
+    const slcanio = document.querySelector("#anios");
+    const slcbank = document.querySelector("#bank");
+    const ttlsmry = document.querySelector("#title-summary-id");
+
+    ajax(
+        'POST', 
+        '../../controller/menus-activos-controller.php', 
+        (xhr) => {
+            var response = JSON.parse(xhr.responseText);
+            if(response["respuesta"] == 1){
+                ttlsmry.textContent =  completeMonth(btnAct.value) + " " + slcanio.options[slcanio.selectedIndex].text + " - Banco " + slcbank.options[slcbank.selectedIndex].text;
+            }
+        }, 
+        { accion: 'updateMenusActivos', 'month' : btnAct.value, 'years' : slcanio.value, 'bank' : slcbank.value }
+    );
+
 }

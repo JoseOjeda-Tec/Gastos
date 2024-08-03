@@ -6,9 +6,9 @@
     $menus_activos = new menus_activos();
 
     header('Content-Type: application/json');
-    $data = json_decode(file_get_contents('php://input'), true);
+    $data_input = json_decode(file_get_contents('php://input'), true);
 
-    switch ($data['accion']) {
+    switch ($data_input['accion']) {
         case "getMenusActivos":
 
             $array_data = $menus_activos->getMenusActivos();
@@ -21,6 +21,25 @@
             ];
 
             echo json_encode($response);
+
+        break;
+
+        case "updateMenusActivos":
+
+            $data = [
+                'month' => $data_input['month'],
+                'year' => $data_input['years'],
+                'bank' => $data_input['bank']
+            ];
+
+            $response = $menus_activos->updateMenusActivos($data);
+
+            $resp_json = [
+                "respuesta" => $response == 1 ? 1 : 0,
+                "mensaje" => $response == 1 ? "Consulta exitosa" : "Error en la consulta"
+            ];
+
+            echo json_encode($resp_json);
 
         break;
         

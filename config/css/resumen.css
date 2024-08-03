@@ -30,6 +30,16 @@ body{
     cursor: pointer;
 }
 
+.menu-btn-dark{
+    background-color: #0067B4;
+    font-weight: 800;
+    color: #fff;
+}
+
+.menu-btn-active{
+    background-color: #e38f09;
+}
+
 /* Botones de meses */
 .month-buttons{
     background-color: aquamarine;

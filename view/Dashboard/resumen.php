@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,13 +21,12 @@
         <div class="container-descktop">
 
             <div class="menu-nav">
-                <button type="button" class="btn-dark menu-btn ">Home</button>
-                <button type="button" class="btn-dark menu-btn">Compras</button>
-                <button type="button" class="btn-dark menu-btn">Bancos</button>
+                <button id="btn-menu-home" type="button" class="menu-btn-dark menu-btn menu-btn-active">Home</button>
+                <button id="btn-menu-finance" type="button" class="menu-btn-dark menu-btn">Finanzas</button>
             </div>
 
             <div class="title-summary-active">
-                <h1 class="title-summary">Enero 2024 - <strong>Banco Itau</strong></h1>
+                <h1 id="title-summary-id" class="title-summary"></h1>
             </div>
 
             <div class="month-buttons">
